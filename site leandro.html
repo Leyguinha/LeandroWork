@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro_ncs | Gamer & Streamer</title>
+    
+    <!-- Metas de Compartilhamento -->
+    <meta name="description" content="Canal oficial de lives de jogos, clipes e comunidade de Leandro_ncs. Acompanhe na Twitch!">
+    <meta property="og:title" content="Leandro_ncs | Gamer & Streamer">
+    <meta property="og:image" content="https://i.postimg.cc/SxqdzY7n/perfil-jpg.png">
+    
+    <!-- Tipografia: Plus Jakarta Sans & Google Fonts Lobster (como fallback para Blenda Script) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones FontAwesome & Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        twitch: {
+                            DEFAULT: '#9146ff',
+                            hover: '#772ce8',
+                        },
+                        live: '#10b981'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        blenda: ['"Blenda Script"', 'Lobster', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Import da fonte Blenda Script via Web */
+        @font-face {
+            font-family: 'Blenda Script';
+            src: url('https://cdn.jsdelivr.net/gh/SeniorsStudio/fonts/blenda-script.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/SeniorsStudio/fonts/blenda-script.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            background-color: #08090d;
+            background-image: 
+                linear-gradient(rgba(8, 9, 13, 0.82), rgba(8, 9, 13, 0.82)),
+                url('https://i.postimg.cc/9MrjTQHg/banner-site.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Aplicação da Fonte Blenda Script */
+        .font-blenda-script {
+            font-family: 'Blenda Script', 'Lobster', cursive;
+        }
+
+        /* Botão Principal da Live */
+        .live-cta-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 320px;
+            padding: 12px 20px;
+            border-radius: 14px;
+            background: rgba(145, 70, 255, 0.2);
+            border: 1px solid rgba(145, 70, 255, 0.5);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px -4px rgba(145, 70, 255, 0.4);
+        }
+
+        .live-cta-link:hover {
+            background: rgba(145, 70, 255, 0.35);
+            border-color: rgba(145, 70, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px -2px rgba(145, 70, 255, 0.6);
+        }
+
+        /* Botão do LivePix */
+        .livepix-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 320px;
+            padding: 12px 20px;
+            border-radius: 14px;
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #fef3c7;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .livepix-link:hover {
+            background: rgba(245, 158, 11, 0.25);
+            border-color: rgba(245, 158, 11, 0.7);
+            transform: translateY(-2px);
+            color: #ffffff;
+            box-shadow: 0 6px 20px -4px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Pulso Live */
+        .pulse-dot {
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.85); }
+        }
+
+        /* Dock de Redes Sociais */
+        .social-dock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .social-icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 20px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .social-icon-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .social-icon-btn.twitch:hover { color: #a970ff; border-color: rgba(169, 112, 255, 0.5); }
+        .social-icon-btn.tiktok:hover { color: #00f2fe; border-color: rgba(0, 242, 254, 0.5); }
+        .social-icon-btn.instagram:hover { color: #ff2a85; border-color: rgba(255, 42, 133, 0.5); }
+        .social-icon-btn.x-twitter:hover { color: #ffffff; border-color: rgba(255, 255, 255, 0.5); }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen justify-between items-center p-6 md:p-10">
+    
+    <!-- Espaçador superior invisível para centralização perfeita no eixo vertical -->
+    <div></div>
+
+    <!-- Conteúdo principal centralizado -->
+    <main class="w-full max-w-sm mx-auto text-center space-y-6 my-auto">
+        <!-- Foto de Perfil / Status -->
+        <div class="relative inline-block">
+            <img src="https://i.postimg.cc/SxqdzY7n/perfil-jpg.png" alt="Leandro_ncs" class="w-28 h-28 rounded-full border-2 border-twitch object-cover mx-auto shadow-2xl">
+            <span class="absolute bottom-1 right-1 w-4 h-4 bg-live rounded-full border-2 border-dark-base pulse-dot"></span>
+        </div>
+
+        <!-- Títulos / Biografia -->
+        <div class="space-y-2">
+            <h1 class="text-4xl font-blenda-script tracking-wide text-white drop-shadow-lg">Leandro_ncs</h1>
+            <p class="text-sm text-slate-300 leading-relaxed max-w-xs mx-auto drop-shadow">
+                Prazer sou o Leandro, tento jogar de tudo um pouco aqui, provavelmente vocês verão mais Valorant, Overwatch e alguns jogos de esportes
+            </p>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="flex flex-col items-center space-y-3 pt-1">
+            <a href="https://twitch.tv/leandro_ncs" target="_blank" class="live-cta-link">
+                <i class="fa-brands fa-twitch text-lg"></i>
+                Assistir Live na Twitch
+            </a>
+            
+            <a href="https://livepix.gg/leandroncs" target="_blank" class="livepix-link">
+                <i class="fa-solid fa-mug-hot text-amber-400"></i>
+                Mande um Pix / Apoie a Live
+            </a>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="social-dock pt-2">
+            <a href="https://twitch.tv/leandro_ncs" target="_blank" class="social-icon-btn twitch" title="Twitch">
+                <i class="fa-brands fa-twitch"></i>
+            </a>
+            <a href="https://tiktok.com/@leandro_ncs" target="_blank" class="social-icon-btn tiktok" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/leandro.ncsx_/" target="_blank" class="social-icon-btn instagram" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/Leandro_Power20" target="_blank" class="social-icon-btn x-twitter" title="X / Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="text-xs text-slate-400 text-center drop-shadow">
+        &copy; 2026 Leandro_ncs. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
